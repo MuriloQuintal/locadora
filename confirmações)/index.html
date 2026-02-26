@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AssemblyScript Wasm Example</title>
+  <script type="module">
+    // Load compiled Wasm module (ES Module format)
+    import { add, multiply } from "./build/release.js";
+    
+    // Display results on page
+    document.addEventListener("DOMContentLoaded", () => {
+      const result = `
+        <h2>AssemblyScript Wasm Example</h2>
+        <p>add(1, 2) = ${add(1, 2)}</p>
+        <p>multiply(3, 4) = ${multiply(3, 4)}</p>
+      `;
+      document.body.innerHTML = result;
+    });
+  </script>
+</head>
+<body></body>
+</html>

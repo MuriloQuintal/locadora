@@ -1,0 +1,6 @@
+{
+  "extends": "../../../../../../AppData/Local/npm-cache/_npx/4fdb9d79414f7b8f/node_modules/std/assembly.json",
+  "include": [
+    "./**/*.ts"
+  ]
+}

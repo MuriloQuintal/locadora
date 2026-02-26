@@ -1,0 +1,49 @@
+CREATE DATABASE protejorentcar
+DEFAULT CHARACTER SET utf8
+DEFAULT COLLATE utf8_general_ci;
+
+
+
+create or replace table veiculos(
+
+id int not null auto_increment,
+modelo varchar (50),
+marca varchar (30),
+placa varchar (7),
+categoria varchar(20),
+valor_diaria decimal (10,2),
+primary key (id)
+) default charset = utf8;
+
+
+create or replace table agendamentos(
+
+id int not null auto_increment,
+nome_cliente varchar (100),
+email_cliente varchar (50),
+veiculo_id int,
+data_reserva date,
+primary key (id),
+foreign key (veiculo_id)references veiculos(id)
+) default charset = utf8;
+
+
+create or replace table usuarios(
+
+id int not null auto_increment,
+login varchar (100)NOT NULL,
+senha varchar (255)NOT NULL,
+nivel_acesso enum('Admin', 'Operador') NOT NULL,
+primary key (id)
+) default charset = utf8;
+
+
+create or replace table clientes(
+
+id int not null auto_increment,
+nome varchar (100)NOT NULL,
+email varchar (255)NOT NULL,
+categoria varchar(20),
+primary key (id)
+
+) default charset = utf8;
