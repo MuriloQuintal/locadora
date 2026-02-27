@@ -16,18 +16,18 @@
             <img src="imagens/icone.png" alt="ícone de caminhão">
             <h2 class="titulo">Encontre o veículo certo para você!</h2>
             <p class="texto">Preencha as informações abaixo</p>
-            <form class="pedido">
-                <label class="rotulo">Nome</label>
-                <input type="text" class="campo-texto">
-                <label class="rotulo">E-mail</label>
-                <input type="text" class="campo-texto">
-                <label class="rotulo">Selecione o tipo de veículo</label>
-                <select class="campo-texto">
+            <form id="reservar" class="pedido" >
+                <label for ="nome" class="rotulo">Nome</label>
+                <input type="text" class="campo-texto" id="nome">
+                <label for ="email" class="rotulo">E-mail</label>
+                <input type="text" class="campo-texto" id="email">
+                <label for="categoria" class="rotulo">Selecione o tipo de veículo</label>
+                <select class="campo-texto" id="categoria">
                     <option>Básico</option>
                     <option>Família</option>
                     <option>Luxo</option>
                 </select>
-                <button class="botao-reservar">FAZER MINHA RESERVA</button>
+                <button class="botao-reservar" type="button" id="btn-reservar">FAZER MINHA RESERVA</button>
             </form>
         </div>
         <div id="col2">

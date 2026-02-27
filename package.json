@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/gutoffline/locadora#readme",
   "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
     "express": "^5.2.1",
     "mysql": "^2.18.1",
     "mysql2": "^3.18.1",
