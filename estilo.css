@@ -136,3 +136,9 @@ body{
     justify-content: center;
     height: 100vh;
 }
+
+
+.erro { 
+    border: 1px solid #e74c3c; 
+    box-shadow: 0 0 0 2px rgba(231,76,60,.15);
+ }

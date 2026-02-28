@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locadora de Veículos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+</head>
+
+<body>
+    <main class="tudo">
+        <div id="col1">
+            <img src="imagens/icone.png" alt="ícone de caminhão">
+            <h2 class="titulo">Cadastro de Frota</h2>
+            <p class="texto">Preencha as informações abaixo</p>
+            <form id="reservar" class="pedido">
+                <label for="modelo" class="rotulo">Modelo</label>
+                <input type="text" class="campo-texto" id="modelo">
+                <label for="marca" class="rotulo">Marca</label>
+                <input type="text" class="campo-texto" id="marca">
+                <label for="placa" class="rotulo">Placa</label>
+                <input type="text" class="campo-texto" id="placa">
+                <label for="categoria" class="rotulo">Selecione a categoria do veículo</label>
+                <select class="campo-texto" id="categoria">
+                    <option>Básico</option>
+                    <option>Família</option>
+                    <option>Luxo</option>
+                </select>
+                <label for="diaria" class="rotulo">Valor Diaria</label>
+                <input type="text" class="campo-texto" id="diaria">
+                <button class="botao-reservar" type="button" id="btn-reservar">Incluir Veiculo</button>
+            </form>
+        </div>
+        <div id="col2">
+            <h1 class="oferta">Revise os Dados antes de incluir o veiculo <strong class="destaque"></strong></h1>
+            <p class="texto-oferta"></p>
+            <img src="" alt="">
+        </div>
+
+    </main>
+
+</body>
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <img src="..." class="rounded me-2" alt="...">
+            <!-- <strong class="me-auto">Possiveis Campos Vazios</strong> -->
+            <Strong class="me-auto">Preencha os Campos: Modelo Marca Placa Categoria Diaria</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Não Incluido
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+<script src="app-form-veiculo.js"></script>
+</body>
+
+</html>

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locadora de Veículos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="estilo.css">
 
 </head>
@@ -16,10 +17,10 @@
             <img src="imagens/icone.png" alt="ícone de caminhão">
             <h2 class="titulo">Encontre o veículo certo para você!</h2>
             <p class="texto">Preencha as informações abaixo</p>
-            <form id="reservar" class="pedido" >
-                <label for ="nome" class="rotulo">Nome</label>
+            <form id="reservar" class="pedido">
+                <label for="nome" class="rotulo">Nome</label>
                 <input type="text" class="campo-texto" id="nome">
-                <label for ="email" class="rotulo">E-mail</label>
+                <label for="email" class="rotulo">E-mail</label>
                 <input type="text" class="campo-texto" id="email">
                 <label for="categoria" class="rotulo">Selecione o tipo de veículo</label>
                 <select class="campo-texto" id="categoria">
@@ -35,12 +36,28 @@
             <p class="texto-oferta">Válido para todo território nacional</p>
             <img src="imagens/renault-kwid.png" alt="Renault Kwid">
         </div>
+        
     </main>
+    
 </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="..." class="rounded me-2" alt="...">
+                    <!-- <strong class="me-auto">Possiveis Campos Vazios</strong> -->
+                    <Strong class="me-auto">Preencha os Campos: NOME, EMAIL e Selecione a Categoria</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Reserva Não Realizada!
+                </div>
+            </div>
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 
-    <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
+
 </html>

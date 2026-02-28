@@ -37,7 +37,7 @@ console.log("Conexão deu bom \n")
 // })
 
 app.post("/clientes/", function (req, res) {
-// res.setHeader('Access-Control-Allow-Origin','*')
+
     const data = req.body;
     conexao.query(`INSERT INTO clientes set ?`, [data],
         function(erro, resultado){
@@ -47,6 +47,17 @@ app.post("/clientes/", function (req, res) {
             res.send(resultado.insertId)
     });
 })
+
+
+// app.get("/validar", function (req, res) {
+//     // res.setHeader('Access-Control-Allow-Origin','*')
+//     //res.send(lista_produtos)
+
+//     conexao.query("select * from clientes where nome = ", function (erro, lista_produtos, campos) {
+//         console.log(lista_produtos);
+//         res.send(lista_produtos)
+//     })
+// })
 
 
 // const lista_clientes = [
@@ -63,5 +74,22 @@ app.post("/clientes/", function (req, res) {
 //     // res.setHeader('Access-Control-Allow-Origin','*')
 //     res.send(lista_clientes)
 // })
+
+
+app.post("/veiculos/", function (req, res) {
+
+    const data = req.body;
+    conexao.query(`INSERT INTO veiculos set ?`, [data],
+        function(erro, resultado){
+        if(erro) {
+            res.json(erro);
+        }
+            res.send(resultado.insertId)
+    });
+})
+
+
+
+
 
 app.listen(3001)

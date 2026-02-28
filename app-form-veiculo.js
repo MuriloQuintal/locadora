@@ -5,20 +5,22 @@ function fnLimparCampos() {
 
 function fnErro() {
 
-    alert("Preencha os Campos Nome e Email!")
+    alert("Preencha todos os campos!")
 }
 
-function fnCadastrarReserva() {
+function fnIncluirVeiculo() {
 
     let formDados = {
-        nome: document.getElementById("nome").value,
-        email: document.getElementById("email").value,
-        categoria: document.getElementById("categoria").value
+        modelo: document.getElementById("modelo").value,
+        marca: document.getElementById("marca").value,
+        placa: document.getElementById("placa").value,
+        categoria: document.getElementById("categoria").value,
+        diaria: document.getElementById("diaria").value
 
     }
     console.dir(formDados)
 
-    fetch('http://localhost:3001/clientes/', {
+    fetch('http://localhost:3001/veiculos/', {
         method: 'POST',
         headers: { 'content-Type': 'application/json' },
         body: JSON.stringify(formDados)
@@ -47,23 +49,26 @@ function fnCadastrarReserva() {
 
 
 
-let btn_salvar = document.getElementById("btn-reservar")
+let btn_salvar = document.getElementById("btn-incluir")
 
 btn_salvar.addEventListener("click", function () {
 
-    let nome = document.getElementById("nome")
-    let email = document.getElementById("email").value
+    let modelo = document.getElementById("modelo").value
+    let marca = document.getElementById("marca").value
+    let placa = document.getElementById("placa").value
+    let categoria = document.getElementById("categoria").value
+    let diaria = document.getElementById("diaria").value
 
 
-    if (nome.value === "" || email === "") {
-        fnErro();
-        return;
-    } else {
-        fnCadastrarReserva()
-        fnLimparCampos()
-        alert("Reserva Realizada!");
-        
-    }
+    if (modelo === "" || marca === "" || placa === "" || categoria === "" || diaria === "") {
+    fnErro();
+    return;
+} else {
+    fnIncluirVeiculo()
+    fnLimparCampos()
+    alert("Reserva Realizada!");
+
+}
 
 
 })
