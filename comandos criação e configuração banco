@@ -12,6 +12,7 @@ marca varchar (30),
 placa varchar (7),
 categoria varchar(20),
 valor_diaria decimal (10,2),
+foto varchar (255),
 primary key (id)
 ) default charset = utf8;
 
@@ -37,6 +38,7 @@ nivel_acesso enum('Admin', 'Operador') NOT NULL,
 primary key (id)
 ) default charset = utf8;
 
+ALTER TABLE usuarios ADD COLUMN nome VARCHAR(100)
 
 create or replace table clientes(
 
@@ -47,3 +49,4 @@ categoria varchar(20),
 primary key (id)
 
 ) default charset = utf8;
+

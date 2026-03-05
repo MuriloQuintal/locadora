@@ -16,19 +16,18 @@
     <main class="tudo">
         <div id="col1">
             <img src="imagens/icone.png" alt="ícone de caminhão">
-            <h2 class="titulo">Faça o Login para Gerenciar</h2>
-            <p class="texto">Preencha as informações abaixo</p>
+            <h2 class="titulo">Faça seu Cadastro</h2>
+            <p class="texto">Crie seu acesso inserindo os dados abaixo:</p>
             <form id="login" class="login">
+                <label for="nome" class="rotulo">Nome</label>
+                <input type="text" class="campo-texto" id="nome">
                 <label for="email" class="rotulo">E-mail</label>
                 <input type="text" class="campo-texto" id="email">
                 <label for="senha" class="rotulo">Senha</label>
                 <input type="text" class="campo-texto" id="senha">
-                <div class="text-center mb-3">
-                    <a class="text-decoration-none text-dark" href="http://127.0.0.1:5500/cadastro.html">Não tem
-                        conta?
-                        <span class="text-azul-petroleo fw-bold">Cadastre-se aqui.</span></a>
-                </div>
-                <button class="botao-login" type="button" id="btn-login">LOGAR</button>
+                <a class="text-decoration-none text-dark" href="http://127.0.0.1:5500/login.html">Se possui conta
+                    <span class="text-azul-petroleo fw-bold">Logar aqui.</span></a>
+                <button class="botao-cadastro" type="button" id="btn-cadastro">CADASTRAR</button>
             </form>
         </div>
         <div id="col2">
@@ -55,7 +54,7 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
 
-<script src="app-login.js"></script>
+<script src="app-cadastro.js"></script>
 </body>
 
 </html>

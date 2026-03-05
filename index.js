@@ -91,10 +91,10 @@ app.post("/veiculo/", function (req, res) {
 })
 
 
-app.post("/login/", function (req, res) {
+app.post("/cadastro/", function (req, res) {
 
     const data = req.body;
-    conexao.query(`INSERT INTO veiculos set ?`, [data],
+    conexao.query(`INSERT INTO usuarios set ?`, [data],
         function(erro, resultado){
         if(erro) {
             res.json(erro);
