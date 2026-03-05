@@ -11,6 +11,8 @@ app.use(cors())
 // res.send('RentCar')
 // })
 
+app.use(express.json())
+
 let mysql = require('mysql')
 let conexao = mysql.createConnection({
     host: "localhost",
@@ -76,7 +78,7 @@ app.post("/clientes/", function (req, res) {
 // })
 
 
-app.post("/veiculos/", function (req, res) {
+app.post("/veiculo/", function (req, res) {
 
     const data = req.body;
     conexao.query(`INSERT INTO veiculos set ?`, [data],
@@ -89,6 +91,46 @@ app.post("/veiculos/", function (req, res) {
 })
 
 
+app.post("/login/", function (req, res) {
+
+    const data = req.body;
+    conexao.query(`INSERT INTO veiculos set ?`, [data],
+        function(erro, resultado){
+        if(erro) {
+            res.json(erro);
+        }
+            res.send(resultado.insertId)
+    });
+})
+
+
+app.get("/veiculos", function (req, res) {
+ 
+
+    conexao.query("select * from veiculos", function (erro, lista_veiculos, campos) {
+        console.log(lista_veiculos);
+        res.send(lista_veiculos)
+    })
+})
+
+app.get("/veiculos/:categoria", function (req, res) {
+
+    const categoria = req.params.categoria
+    conexao.query(`select * from veiculos where categoria = '${categoria}'`, function (erro, dados, campos) {
+        res.send(dados)
+    })
+})
+
+app.get("/veuclos/:categoria/:ordem", function (req, res) {
+    // res.setHeader('Access-Control-Allow-Origin','*')
+    //res.send(lista_produtos)
+    const categoria = req.params.categoria
+    const ordem = req.params.ordem
+
+    conexao.query(`select * from veiculos where categoria = '${categoria}' order by ${ordem}`, function (erro, dados, campos) {
+        res.send(dados)
+    })
+})
 
 
 

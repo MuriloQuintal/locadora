@@ -15,12 +15,13 @@ function fnIncluirVeiculo() {
         marca: document.getElementById("marca").value,
         placa: document.getElementById("placa").value,
         categoria: document.getElementById("categoria").value,
-        diaria: document.getElementById("diaria").value
+        valor_diaria: document.getElementById("diaria").value,
+        foto: document.getElementById("foto").value
 
     }
     console.dir(formDados)
 
-    fetch('http://localhost:3001/veiculos/', {
+    fetch('http://localhost:3001/veiculo/', {
         method: 'POST',
         headers: { 'content-Type': 'application/json' },
         body: JSON.stringify(formDados)
@@ -57,10 +58,11 @@ btn_salvar.addEventListener("click", function () {
     let marca = document.getElementById("marca").value
     let placa = document.getElementById("placa").value
     let categoria = document.getElementById("categoria").value
-    let diaria = document.getElementById("diaria").value
+    let valor_diaria = document.getElementById("diaria").value
+    let foto = document.getElementById("foto").value
 
 
-    if (modelo === "" || marca === "" || placa === "" || categoria === "" || diaria === "") {
+    if (modelo === "" || marca === "" || placa === "" || categoria === "" || valor_diaria === "" || foto ==="") {
     fnErro();
     return;
 } else {
@@ -73,9 +75,9 @@ btn_salvar.addEventListener("click", function () {
 
 })
 
-const toast = document.getElementById("liveToast")
+// const toast = document.getElementById("liveToast")
 
-function fnMensagemPreencherCampos() {
-    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toast)
-    toastBootstrap.show()
-}
+// function fnMensagemPreencherCampos() {
+//     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toast)
+//     toastBootstrap.show()
+// }
